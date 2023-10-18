@@ -1,0 +1,16 @@
+on:
+  workflow_call:
+    inputs:
+      param1:
+        type: string
+        required: false
+
+jobs:
+ terraform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Terraform Init
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: "1.6.0"
